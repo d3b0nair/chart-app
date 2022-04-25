@@ -1,0 +1,99 @@
+.title {
+	display: grid;
+	align-items: baseline;
+	gap: 20px;
+	grid-template-columns: auto 1fr auto;
+	justify-items: left;
+}
+
+.hhTitle {
+	display: grid;
+	align-items: baseline;
+	gap: 20px;
+	grid-template-columns: auto 1fr;
+	justify-items: left;
+}
+
+.seo h1 {
+	margin: 0;
+	font-size: 26px;
+	font-weight: 500;
+	line-height: 35px;
+}
+
+.seo h2 {
+	margin-top: 50px;
+	margin-bottom: 25px;
+	font-size: 22px;
+	font-weight: 500;
+	line-height: 30px;
+}
+
+.seo h3,
+.qas h3 {
+	margin: 0;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 27px;
+}
+
+.qas {
+	margin-bottom: 20px;
+}
+
+.qas h3 {
+	margin-bottom: 10px;
+}
+
+.productCountTag {
+	align-self: center;
+}
+
+.productOverviewLabels {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	padding: 0 30px;
+	margin: 12px 0;
+	border-radius: 30px;
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 16px;
+	text-align: center;
+}
+
+.productOverviewLabels div {
+	overflow: hidden;
+	white-space: normal;
+	word-break: break-all;
+}
+
+.longCell {
+	width: 50%;
+}
+
+.mediumCell {
+	width: 15%;
+}
+
+.tag {
+	margin-bottom: 3px;
+}
+
+@media screen and (max-width: 640px) {
+	.title {
+		grid-template-columns: auto 1fr;
+	}
+}
+
+@media screen and (max-width: 860px) {
+	.title {
+		align-items: center;
+		margin-bottom: 30px;
+		gap: 5px;
+	}
+
+	.productOverviewLabels {
+		display: none;
+	}
+}

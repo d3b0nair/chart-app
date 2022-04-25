@@ -1,0 +1,86 @@
+.ProductOverviewCard {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	margin-bottom: 12px;
+	border-radius: 30px;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 22px;
+	text-align: center;
+}
+
+.ProductOverviewCard svg {
+	fill: rgb(255 206 16);
+}
+
+.longCell {
+	width: 50%;
+}
+
+.mediumCell {
+	width: 15%;
+}
+
+.title {
+	margin-right: 15px;
+	text-align: left;
+}
+
+.prodIconAndTitle {
+	display: grid;
+	align-items: center;
+	gap: 15px;
+	grid-template-columns: auto 1fr;
+	justify-items: left;
+}
+
+.displayOnMobile {
+	display: none;
+	font-weight: bold;
+}
+
+@media screen and (max-width: 860px) {
+	.displayOnMobile {
+		display: inline-block;
+		flex: 1 1;
+		margin-right: 20px;
+	}
+
+	.ProductOverviewCard {
+		flex-direction: column;
+		align-items: flex-start;
+		align-items: unset;
+		text-align: unset;
+	}
+
+	.longCell,
+	.mediumCell {
+		display: flex;
+		width: 100% !important;
+		flex: 2 1;
+		padding: 4px 10px;
+	}
+
+	.mediumCell:last-child {
+		justify-content: flex-end;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.mediumCell:last-child {
+		justify-content: center;
+	}
+
+	.mediumCell a,
+	.mediumCell button {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.displayOnMobile {
+		min-width: 120px;
+		max-width: 120px;
+	}
+}

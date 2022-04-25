@@ -1,0 +1,39 @@
+html,
+body {
+	padding: 0;
+	margin: 0;
+	background: #F5F6F8;
+	color: var(--black);
+	font-family: var(--font-family);
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.visuallyHidden {
+	position: absolute;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+}
+
+:root {
+	--black: #3B434E;
+	--grey-light: #EBEBEB;
+	--grey: #A4A4A4;
+	--grey-dark: #6C7077;
+	--white: white;
+	--primary: #7651F5;
+	--primary-hover: #5839D6;
+	--red: #FC836D;
+	--red-light: #FCBEB3;
+	--green: #007B48;
+	--green-light: #C8F8E4;
+	--font-family: "Noto Sans", sans-serif;
+}

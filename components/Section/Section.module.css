@@ -1,0 +1,21 @@
+.section {
+	margin: 0;
+	color: var(--black);
+	font-style: normal;
+	font-weight: 400;
+}
+
+.small {
+	font-size: 14px;
+	line-height: 24px;
+}
+
+.medium {
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.large {
+	font-size: 18px;
+	line-height: 29px;
+}

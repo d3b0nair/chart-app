@@ -1,0 +1,21 @@
+.wrapper {
+	margin-top: 27px;
+}
+
+.advantage {
+	display: grid;
+	margin-bottom: 30px;
+	gap: 10px 40px;
+	grid-template-columns: 50px 1fr;
+}
+
+.title {
+	align-self: center;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 27px;
+}
+
+.vertLine {
+	border: 1px solid var(--grey-light);
+}

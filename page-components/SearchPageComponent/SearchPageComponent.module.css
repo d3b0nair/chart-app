@@ -1,0 +1,34 @@
+.searchListWrapper {
+	display: grid;
+	margin-top: 30px;
+	gap: 15px;
+	grid-gap: 15px;
+}
+
+.searchResult {
+	display: grid;
+	align-items: center;
+	border-radius: 30px;
+	gap: 20px;
+	grid-gap: 20px;
+	grid-template-columns: auto auto 1fr;
+}
+
+.category {
+	justify-self: left;
+}
+
+.actionButton {
+	justify-self: right;
+}
+
+@media screen and (max-width: 1320px) {
+	.searchResult {
+		gap: 10px;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.searchTitle {
+		grid-column: 1/-1;
+	}
+}

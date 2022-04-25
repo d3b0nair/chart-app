@@ -1,0 +1,48 @@
+.footer {
+	display: grid;
+	padding: 30px 25px;
+	background-color: var(--primary);
+	color: var(--white);
+	font-size: 16px;
+	font-weight: 500;
+	gap: 40px;
+	grid-template-areas: "copyright tos privacyPolicy .";
+	grid-template-columns: 3fr auto auto 40px;
+	line-height: 22px;
+}
+
+.footer a:hover {
+	color: var(--red);
+}
+
+.copyright {
+	grid-area: copyright;
+}
+
+.tos {
+	grid-area: tos;
+}
+
+.privacyPolicy {
+	grid-area: privacyPolicy;
+}
+
+@media (max-width: 765px) {
+	.footer {
+		gap: 10px;
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 765px) {
+	.footer {
+		gap: 10px;
+		grid-template-areas:
+			"tos"
+			"privacyPolicy"
+			"."
+			"copyright";
+		grid-template-columns: 1fr;
+		text-align: center;
+	}
+}

@@ -1,69 +1,69 @@
 .main {
-  display: grid;
-  gap: 40px;
-  grid-auto-columns: 1fr;
-  grid-template-areas:
-    "mainText hero hero"
-    "cardsWrapper hero hero";
-  justify-items: center;
-  width: 100%;
+	display: grid;
+	width: 100%;
+	gap: 40px;
+	grid-auto-columns: 1fr;
+	grid-template-areas:
+		"mainText hero hero"
+		"cardsWrapper hero hero";
+	justify-items: center;
 }
 
 .mainText {
-  grid-area: mainText;
+	grid-area: mainText;
 }
 
 .hero {
-  grid-area: hero;
-  width: 100%;
+	width: 100%;
+	grid-area: hero;
 }
 
 .card {
-  display: grid;
-  align-items: stretch;
-  border-radius: 30px;
-  cursor: pointer;
-  gap: 30px;
-  grid-template-columns: 60px 1fr;
+	display: grid;
+	align-items: stretch;
+	border-radius: 30px;
+	cursor: pointer;
+	gap: 30px;
+	grid-template-columns: 60px 1fr;
 }
 
 .cardsWrapper {
-  display: grid;
-  margin-top: 40px;
-  gap: 20px;
-  grid-area: cardsWrapper;
+	display: grid;
+	margin-top: 40px;
+	gap: 20px;
+	grid-area: cardsWrapper;
 }
 
 .icon {
-  display: grid;
-  height: 50px;
-  align-items: center;
-  justify-content: center;
-  background: var(--primary);
-  border-radius: 30px;
+	display: grid;
+	height: 50px;
+	align-items: center;
+	justify-content: center;
+	background: var(--primary);
+	border-radius: 30px;
 }
 
 .link {
-  align-self: center;
-  font-size: 26px;
-  font-weight: 500;
-  line-height: 26px;
+	align-self: center;
+	font-size: 26px;
+	font-weight: 500;
+	line-height: 26px;
 }
 
 .icon svg {
-  fill: var(--white);
+	fill: var(--white);
 }
 
 @media screen and (max-width: 860px) {
-  .main {
-    grid-template-areas:
-      "mainText"
-      "hero"
-      "cardsWrapper";
-  }
-  .cardsWrapper {
-    width: 100%;
-	padding: 30px;
-  }
-}
+	.main {
+		grid-template-areas:
+			"mainText"
+			"hero"
+			"cardsWrapper";
+	}
 
+	.cardsWrapper {
+		width: 100%;
+		padding: 30px;
+	}
+}

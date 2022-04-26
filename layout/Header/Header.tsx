@@ -7,6 +7,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Sidebar } from "../Sidebar/Sidebar";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
   const [isOpened, setIsOpened] = useState<boolean>(false);
@@ -42,7 +43,11 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
         />
       ) : (
         <>
-          <Logo />
+          <Link href="/">
+            <a aria-label="Перейти на главную страницу">
+              <Logo />
+            </a>
+          </Link>
           <ButtonIcon
             className={styles.menuOpen}
             appearance="white"

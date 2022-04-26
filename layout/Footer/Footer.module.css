@@ -27,14 +27,7 @@
 	grid-area: privacyPolicy;
 }
 
-@media (max-width: 765px) {
-	.footer {
-		gap: 10px;
-		grid-template-columns: 1fr;
-	}
-}
-
-@media (max-width: 765px) {
+@media (max-width: 960px) {
 	.footer {
 		gap: 10px;
 		grid-template-areas:

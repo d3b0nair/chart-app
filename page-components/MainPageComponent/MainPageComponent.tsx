@@ -2,6 +2,7 @@ import styles from "./MainPageComponent.module.css";
 import { Card, Htag } from "../../components";
 import Link from "next/link";
 import { firstLevelMenu } from "../../helpers/helpers";
+import Hero from "../../public/Main.svg";
 
 export const MainPageComponent = (): JSX.Element => {
   return (
@@ -16,15 +17,17 @@ export const MainPageComponent = (): JSX.Element => {
         {firstLevelMenu.map((menuItem) => (
           <Card key={menuItem.id} className={styles.card}>
             <div className={styles.icon}>{menuItem.icon}</div>
-            <div className={styles.link}>
-              <Link href={`/${menuItem.route}`}>
-                <a>{menuItem.name}</a>
-              </Link>
-            </div>
+            <Link href={`/${menuItem.route}`} passHref>
+              <div className={styles.link}>
+                <a tabIndex={0}>{menuItem.name}</a>
+              </div>
+            </Link>
           </Card>
         ))}
       </div>
-      <div className={styles.hero} />
+      <div className={styles.hero}>
+        <Hero width="100%" height="100%" />
+      </div>
     </div>
   );
 };

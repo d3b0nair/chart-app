@@ -7,6 +7,7 @@ import { Button } from "..";
 import { motion } from "framer-motion";
 import { forwardRef, ForwardedRef } from "react";
 import cn from "classnames";
+import Image from "next/image";
 
 export const ProductOverview = motion(
   forwardRef(
@@ -18,7 +19,7 @@ export const ProductOverview = motion(
         <div {...props} ref={ref}>
           <Card className={styles.ProductOverviewCard}>
             <div className={cn(styles.prodIconAndTitle, styles.longCell)}>
-              <img
+              <Image
                 src={process.env.NEXT_PUBLIC_DOMAIN + product.image}
                 alt={product.title}
                 width={40}

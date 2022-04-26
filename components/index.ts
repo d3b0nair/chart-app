@@ -17,3 +17,4 @@ export * from "./ReviewForm/ReviewForm";
 export * from "./Up/Up";
 export * from "./ButtonIcon/ButtonIcon";
 export * from "./ProductOverview/ProductOverview";
+export * from "./Error/Error";

@@ -16,9 +16,8 @@ export const Sort = ({
       </div>
       <button
         id="rating"
-        aria-selected={sort === SortEnum.Rating}
+        aria-checked={sort === SortEnum.Rating}
         aria-describedby="sort rating"
-        tabIndex={1}
         onClick={() => setSort(SortEnum.Rating)}
         className={cn({ [styles.active]: sort === SortEnum.Rating })}
       >
@@ -27,9 +26,8 @@ export const Sort = ({
       </button>
       <button
         id="price"
-        aria-selected={sort === SortEnum.Price}
+        aria-checked={sort === SortEnum.Price}
         aria-describedby="sort price"
-        tabIndex={1}
         onClick={() => setSort(SortEnum.Price)}
         className={cn({ [styles.active]: sort === SortEnum.Price })}
       >

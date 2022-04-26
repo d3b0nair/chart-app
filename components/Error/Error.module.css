@@ -1,0 +1,53 @@
+.wrapper {
+	display: grid;
+	gap: 20px;
+	grid-auto-columns: 1fr;
+	grid-template-areas:
+		"canvas canvas action"
+		"canvas canvas action";
+	justify-items: center;
+}
+
+.canvas {
+	width: 100%;
+	grid-area: canvas;
+}
+
+.action {
+	align-self: center;
+	grid-area: action;
+	text-align: center;
+}
+
+.action button {
+	width: 100%;
+	margin-top: 20px;
+	font-size: 20px;
+}
+
+.action button,
+.action h1,
+.action h2 {
+	margin: 10px 0;
+}
+
+@media screen and (max-width: 640px) {
+	.wrapper {
+		grid-template-areas:
+			"canvas"
+			"action";
+	}
+
+	.action,
+	.canvas {
+		margin: 20px 5px;
+	}
+
+	.action h1 {
+		font-size: 30px;
+	}
+
+	.action h2 {
+		font-size: 26px;
+	}
+}

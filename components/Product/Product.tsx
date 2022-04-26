@@ -11,6 +11,7 @@ import { forwardRef, useRef, useState, ForwardedRef } from "react";
 import { Review } from "../Review/Review";
 import { ReviewForm } from "../ReviewForm/ReviewForm";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export const Product = motion(
   forwardRef(
@@ -38,7 +39,7 @@ export const Product = motion(
         <div {...props} ref={ref}>
           <Card className={styles.product}>
             <div className={styles.logo}>
-              <img
+              <Image
                 src={process.env.NEXT_PUBLIC_DOMAIN + product.image}
                 alt={product.title}
                 width={70}

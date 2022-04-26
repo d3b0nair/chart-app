@@ -13,30 +13,18 @@ import { ProductModel } from "../../interfaces/product.interface";
 import { firstLevelMenu } from "../../helpers/helpers";
 import { TopPageComponent } from "../../page-components";
 import { API } from "../../helpers/api";
-import ContentLoader from "react-content-loader";
 import Head from "next/head";
+import { Erorr404 } from "../404";
 
 const TopPage: NextPage<TopPageProps> = ({
   firstCategory,
   page,
   products,
 }: TopPageProps): JSX.Element => {
-  const Loader = () => (
-    <ContentLoader
-      speed={2}
-      viewBox="0 0 280 380"
-      backgroundColor="#f3f3f3"
-      foregroundColor="#ecebeb"
-    >
-      <rect x="0" y="8" rx="5" ry="5" width="220" height="5" />
-      <rect x="0" y="15" rx="5" ry="5" width="280" height="26" />
-      <rect x="0" y="46" rx="5" ry="5" width="280" height="26" />
-      <rect x="0" y="77" rx="5" ry="5" width="280" height="26" />
-      <rect x="0" y="108" rx="5" ry="5" width="280" height="380" />
-      <rect x="0" y="139" rx="5" ry="5" width="280" height="380" />
-    </ContentLoader>
-  );
-  return page && products ? (
+  if (!page || !products) {
+    return <Erorr404 />;
+  }
+  return (
     <>
       <Head>
         <title>{page.metaTitle}</title>
@@ -51,8 +39,6 @@ const TopPage: NextPage<TopPageProps> = ({
         products={products}
       />
     </>
-  ) : (
-    <Loader />
   );
 };
 

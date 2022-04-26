@@ -28,30 +28,29 @@ function Search(): JSX.Element {
   );
   const [result, setResult] = useState<Array<PageModel>>();
   const router = useRouter();
+
   useEffect(() => {
-    if (!router.query.q) {
-      return;
+    if (router.query.q) {
+      const body = {
+        firstCategory: 0,
+        text: router.query.q,
+      };
+      const lookUpQuery = async (body: {
+        firstCategory: number;
+        text: string | string[];
+      }) => {
+        try {
+          const { data } = await axios.post<PageModel[]>(
+            API.topPage.textSearch,
+            body
+          );
+          setResult(data);
+        } catch (e) {
+          console.log(e);
+        }
+      };
+      lookUpQuery(body);
     }
-    const body = {
-      firstCategory: 0,
-      text: router.query.q,
-    };
-    const lookUpQuery = async (body: {
-      firstCategory: number;
-      text: string | string[];
-    }) => {
-      try {
-        const { data } = await axios.post<PageModel[]>(
-          API.topPage.textSearch,
-          body
-        );
-        console.log(data);
-        setResult(data);
-      } catch (e) {
-        console.log(e);
-      }
-    };
-    lookUpQuery(body);
   }, [router.query.q]);
 
   return (

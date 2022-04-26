@@ -1,7 +1,7 @@
 import { ButtonProps } from "./Button.props";
 import styles from "./Button.module.css";
 import cn from "classnames";
-import ArrowIcon from "./../../icons/arrow.svg";
+import ArrowIcon from "./../../icons/Arrow.svg";
 import { motion } from "framer-motion";
 
 export const Button = ({

@@ -3,23 +3,32 @@ import styles from "./Search.module.css";
 import cn from "classnames";
 import { Input } from "../Input/Input";
 import { Button } from "../Button/Button";
-import { useState, KeyboardEvent } from "react";
+import { useState, KeyboardEvent, MouseEvent, TouchEvent } from "react";
 import SearchIcon from "./../../icons/Search.svg";
 import { useRouter } from "next/router";
 
 export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
-  const [query, setQuery] = useState<string>("");
   const router = useRouter();
+  const [query, setQuery] = useState<string>("");
   const dispatchSearch = () => {
-    router.push({ pathname: "/search", query: { q: query } });
+    router.push({
+      pathname: "/search",
+      query: {
+        q: query,
+      },
+    });
   };
   const handleKeyDown = (evt: KeyboardEvent) => {
     if (evt.key === "Enter") {
       dispatchSearch();
     }
   };
+  const handleClick = (evt: MouseEvent | TouchEvent) => {
+    evt.preventDefault();
+    dispatchSearch();
+  };
   return (
-    <form className={cn(className, styles.search)} {...props} role="search">
+    <form className={cn(className, styles.search)} role="search" {...props}>
       <Input
         className={styles.input}
         placeholder="Поиск..."
@@ -30,7 +39,7 @@ export const Search = ({ className, ...props }: SearchProps): JSX.Element => {
       <Button
         appearance="primary"
         className={styles.button}
-        onClick={dispatchSearch}
+        onClick={handleClick}
         aria-label="Искать по сайту"
       >
         <SearchIcon />
